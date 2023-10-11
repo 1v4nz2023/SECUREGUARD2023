@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/recursos/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/recursos/css/estilos.css">
+    <link rel="icon" type="image/x-icon" href="/recursos/img/sglogo.ico">
+    <script src="../../recursos/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>SecureGuard</title>
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg" style="background-color: #ffdc6a;">
+    <div class="container-fluid">
+      <a href="/index.html"><img class="logo" src="/recursos/img/sglogo.png" alt="">
+      </a>
+      <a class="navbar-brand" href="#">SecureGuard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+          <a class="nav-link" href="#">Alarma</a>
+          <a class="nav-link" href="#">Visitas</a>
+          <a class="nav-link" href="#">Chat</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+    <div class="contenedor_panico">
+      <div class="card contenedor_boton" style="width: 18rem;">
+        <button class="botonP" value="1" type="submit" id="activar"><img src="https://img.freepik.com/fotos-premium/boton-panico-inscripcion_406939-4228.jpg?w=2000" class="card-img-top" alt="panic"></button>
+        <div class="card-body panico ">
+          <h1 class="card-title">Botón de pánico</h1>
+          <p class="card-text">Presione panic para activar la alarma</p>
+               <button value="0" type="submit" id="desactivar" class="btn btn-danger boton">Desactivar</button>
+        </div>
+      </div>            
+    </div>
+
+  
+
+      
+
+</main>
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <div class="col-md-4 d-flex align-items-center">
+    <span class="mb-3 mb-md-0 text-body-secondary">© 2023 SecureGuard, Grupo 3 - DESO</span>
+  </div>
+</footer>
+<!-- The core Firebase JS SDK is always required and must be listed first 
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>-->
+
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase.js"></script>
+    <script src="/recursos/js/alarma/alarma.js"></script>
+  
+    <script src="/recursos/bootstrap/bootstrap.min.js"></script>
+    <script src="/recursos/bootstrap/popper.min.js"></script>
+    <script src="/recursos/js/login/login.js"></script>
+</body>
+</html>
