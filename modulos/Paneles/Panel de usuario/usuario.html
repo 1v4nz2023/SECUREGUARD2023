@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../recursos/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../Panel de usuario/usuario.css">
+    <link rel="icon" type="image/x-icon" href="../../recursos/img/sglogo.ico">
+    <script src="../../recursos/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Menu lateral</title>
+</head>
+<body>
+    <div id="sidemenu" class="menu-collapsed">
+        
+        <div id="header">
+            <div id="title"><span>USUARIO</span></div>
+            <div id="menu-btn">
+                <div class="btn-hamburger"></div>
+                <div class="btn-hamburger"></div>
+                <div class="btn-hamburger"></div>
+            </div>
+        </div>
+
+        <div id="profile">
+            <div id="photo"><img src="https://img.freepik.com/vector-premium/icono-perfil-avatar_188544-4755.jpg" alt=""></div>
+
+            <div id="name"><span>Xiomara Torres</span></div>
+        </div>
+
+        
+
+        <div id="menu-items">
+            <div class="item">
+                <a href="#">
+                    <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/648/648227.png" alt=""></div>
+                    <div class="title"><span>Visitas</span></div>
+                </a>
+            </div>
+
+            <div class="item separator">
+            </div>
+            
+            <div class="item">
+                <a href="#">
+                    <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/2920/2920101.png" alt=""></div>
+                    <div class="title"><span>Mensajes</span></div>
+                </a>
+            </div>
+
+            
+
+            <div class="item separator">
+            </div>
+
+            <div class="item">
+                <a href="#">
+                    <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/9356/9356599.png" alt=""></div>
+                    <div class="title"><span>Alerta</span></div>
+                </a>
+            </div>
+
+            <div class="item separator">
+            </div>
+
+            <div class="item">
+                <a href="#">
+                    <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/2190/2190552.png" alt=""></div>
+                    <div class="title"><span>Chat</span></div>
+                </a>
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+    
+
+    <section class="dashboard">
+        <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+
+    <div class="search-box">
+        <i class="uil uil-search"></i>
+        <input type="text" placeholder="Search  here...">
+    </div>
+</div>
+</section>
+
+    
+
+
+
+
+    <div id="main-conteiner">
+        
+    </div>
+
+<script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e =>{
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
+
+            document.querySelector('body').classList.toggle('body-expanded');
+            
+
+        });
+    </script>
+
+
+
+
+
+    
+
+</body>
+</html>
