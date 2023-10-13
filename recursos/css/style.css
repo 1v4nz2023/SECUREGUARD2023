@@ -1,0 +1,105 @@
+body{
+    background-image: url(../img/seguridad.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.lead{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.titulo{
+text-align: center;
+margin-top: 20px;
+}
+
+.b{
+    background-color: white;
+}
+.s{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+}
+
+.contenedor_login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+}
+
+.userimg{
+    width: 20%;
+    margin-top: 2rem;
+    border-radius: 100%;
+}
+
+.google{
+    width: 60px;
+}
+
+.ingresogoogle{
+    background-color: transparent;
+    border: none;
+    margin-bottom: 20px;
+}
+.formulario{
+background-color: rgba(0, 0, 0, 0.808);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+border-radius:10px;
+min-height: 450px;
+box-shadow: 6px 20px 10px black;
+color: white;
+}
+
+.text{
+
+    font-size: large;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.banner2{
+    margin-top: 100px;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contenedor_tablas{
+    background-color: rgba(142, 173, 163, 0.808);;
+    border-radius: 1rem;
+}
+
+.contenedor_sesion{
+    background-color: rgba(142, 173, 163, 0.808);;
+    border-radius: 1rem;
+    padding: 10px;
+
+}
+
+#programa{
+    text-align: center;
+}
+
+.bandeja{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    background-color:#c1e6cc;
+    border-radius: 20px;
+    box-shadow: 6px 20px 10px black;
+}

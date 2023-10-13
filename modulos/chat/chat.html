@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat</title>
+    <link rel="stylesheet" href="../../recursos/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../recursos/css/estilos.css">
+    <link rel="icon" type="image/x-icon" href="../../recursos/img/sglogo.ico">
+    <script src="../../recursos/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../src/index.js"></script>
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg" style="background-color: #ffdc6a;">
+        <div class="container-fluid">
+          <a href="../../index.html"><img class="logo" src="../../recursos/img/sglogo.png" alt="">
+          </a>
+          <a class="navbar-brand" href="#">SecureGuard</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="../panel/adminpanel/adminpanel.html">Inicio</a>
+              <a class="nav-link" href="../alarma/alarma.html">Alarma</a>
+              <a class="nav-link" href="#">Visitas</a>
+              <a class="nav-link" href="#">Chat</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header> 
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand" id="nombreUsuario">Chat</span>
+            <div id="botones">
+            </div>
+        </nav>
+        <main id="contenidoProtegido" class="mt-3" style="height: 75vh; overflow-y: scroll;">
+
+
+        </main>
+
+        <form class="input-group py-3 fixed-bottom container" id="formulario">
+            <input type="text" class="form-control" placeholder="Enviar mensaje" id="inputChat">
+            <div class="input-group-append">
+                <button class="btn btn-primary submit">Enviar</button>
+            </div>    
+        </form>
+    </div>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2023 SecureGuard, Grupo 3 - DESO</span>
+      </div>
+    </footer>
+
+    <script src="../../recursos/bootstrap/bootstrap.min.js"></script>
+    <script src="../../recursos/bootstrap/popper.min.js"></script>
+    <script type="module" src="../../recursos/js/chat/chat.js"></script>
+  </body>
+</html>
