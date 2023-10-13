@@ -6,12 +6,6 @@ import { onAuthStateChanged } from "../../../src/index.js";
 
 const boton = document.getElementById('googleIniciar');
 
-
-
-
-
-
-
 boton.addEventListener('click', () => {
     signInWithPopup(auth, provider)
     .then((result) => {
@@ -34,7 +28,7 @@ boton.addEventListener('click', () => {
         confirmButtonText: 'OK',
       })
       setTimeout(function(){
-              window.location="../../modulos/panel/adminpanel/adminpanel.html";
+              window.location="../../../modulos/panel/adminpanel/adminpanel.html";
       }, 2000);
 
     }).catch((error) => {
