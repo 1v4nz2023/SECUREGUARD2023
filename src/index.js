@@ -1,7 +1,7 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js';
 import{getAuth, onAuthStateChanged,GoogleAuthProvider,signInWithPopup,signOut } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
-import{getFirestore, collection, addDoc, onSnapshot, where, query, doc,orderBy  } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js';
-import {getDatabase,ref, set,onValue,child, get } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"
+import{getFirestore, collection, addDoc, onSnapshot, where, query, doc,orderBy,setDoc  } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js';
+import {getDatabase,ref, set,onValue,child, get,update  } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"
 
 const firebaseConfig = {
   apiKey: "AIzaSyD68kzIw8vC4hy2iqR6NRrPw6qHN9Xhb0o",
@@ -39,6 +39,8 @@ export{set};
 export{onValue};
 export{child};
 export{get};
+export{setDoc};
+export{update};
 export{auth};
 export{provider};
 export{db};

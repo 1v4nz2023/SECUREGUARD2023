@@ -10,7 +10,7 @@
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
     <script src="../../recursos/js/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+    <link rel="stylesheet" href="../../recursos/datatable/dataTables.min.css">
     
     <title>SecureGuard</title>
 </head>
@@ -42,6 +42,7 @@
 </header>
   <main >
     <br>
+    <div id="ejemplo"></div>
     <div class="container">
         <table id="myTable" style="width:100%" class="display responsive no-wrap">
             <thead>
@@ -51,15 +52,14 @@
                     <th>APELLIDOS</th> 
                     <th>TELEFONO</th>  
                     <th>CORREO</th> 
-                    <th>ESTADO</th>
-                    <th>ACCIÓN</th>                   
+                    <th>ESTADO</th>      
+                    <th>ACCIÓN</th>             
                 </tr>
             </thead>
             <tbody>
             </tbody>
         </table>
     </div>
-
 
 
   </main>
@@ -73,9 +73,11 @@
   
     <script src="../../recursos/bootstrap/bootstrap.min.js"></script>
     <script src="../../recursos/bootstrap/popper.min.js"></script>
+    <script src="../../recursos/datatable/dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
     <script type="module" src="../../recursos/js/login/loginout.js"></script>
     <script type="module" src="../../recursos/js/solicitudes/solicitudes.js"></script>
 
 </body>
+

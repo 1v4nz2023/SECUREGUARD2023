@@ -12,46 +12,74 @@ import { doc } from '../../../src/index.js';
 import { orderBy } from "../../../src/index.js";
 import { signOut } from "../../../src/index.js"; 
 import { getDatabase } from "../../../src/index.js"; 
-import { database } from "../../../src/index.js"; 
+import { child } from "../../../src/index.js"; 
 import { ref } from "../../../src/index.js"; 
 import { set } from "../../../src/index.js"; 
-import { onValue } from "../../../src/index.js"; 
+import { setDoc } from "../../../src/index.js"; 
+import { database } from "../../../src/index.js"; 
+
 const signupForm = document.querySelector('#signup-form');
+
 
 signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+const nombres = signupForm['signup-name'].value;
+const apellidos = signupForm['signup-lastname'].value;
+const dni = signupForm['signup-dni'].value;
+const email = signupForm['signup-email'].value;
+const password = signupForm['signup-password'].value;
+const telefono = signupForm['signup-tel'].value;
+const estado = 'desactivado';
 
-    const nombres = signupForm['signup-name'].value;
-    const apellidos = signupForm['signup-lastname'].value;
-    const dni = signupForm['signup-dni'].value;
-    const email = signupForm['signup-email'].value;
-    const password = signupForm['signup-password'].value;
-    const telefono = signupForm['signup-tel'].value;
-    const estado = 'desactivado';
-   
     document.querySelector('#signupModal');
     const modal = bootstrap.Modal.getInstance(signupModal);
-
-    signupForm.reset();
     modal.hide();
 
-    writeUserData(dni,nombres,password,email,telefono,estado);
+    writeUserData(nombres, apellidos, dni, email, password, telefono, estado);
 
+    // try {
+
+    //   const docRef = await addDoc(collection(db, "userquest"), {
+    //     nombres: nombres,
+    //     apellidos: apellidos,
+    //     dni:dni,
+    //     email:email,
+    //     password:password,        
+    //     telefono:telefono,
+    //     estado:estado,
+    //     fecha: Date.now()
+    //   });
+
+
+    //   console.log("Mensaje guardado ");
+    //   Swal.fire({
+    //     customClass: {
+    //         confirmButton: 'confirm-button-class2',
+    //         title: 'title-class',
+    //         icon: 'icon-class'
+    //       },   
+    //     title: 'Registro exitoso ',
+    //     text: 'Espere a que sea aprobado',
+    //     icon: 'success',
+    //     confirmButtonText: 'OK',
+    //   })
+      
+    // } catch (e) {
+    //   console.error("Error adding document: ", e);
+    // }
 });
 
-
-
-function writeUserData(dni, nombres, password, email, telefono, estado) {
-    const db = getDatabase();
-    set(ref(db, 'users/' + dni), {
-      dni: dni,
-      nombres: nombres,
-      password: password,
-      email: email,
-      telefono: telefono,
-      estado: estado
-    })
-    .then(() => {
+function writeUserData(nombres, apellidos, dni, email, password, telefono, estado) {
+  set(ref(database, 'users/' + dni), {
+    nombres: nombres,
+    apellidos: apellidos,
+    dni:dni,
+    email:email,
+    password:password,        
+    telefono:telefono,
+    estado:estado,
+  });
+   console.log("Mensaje guardado ");
       Swal.fire({
         customClass: {
             confirmButton: 'confirm-button-class2',
@@ -63,11 +91,5 @@ function writeUserData(dni, nombres, password, email, telefono, estado) {
         icon: 'success',
         confirmButtonText: 'OK',
       })
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  }
-
-
+}
 

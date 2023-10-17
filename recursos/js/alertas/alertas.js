@@ -46,14 +46,11 @@ const unsubscribe = onSnapshot(q, (querySnapshot) => {
       `
     }
 
-
     alertMessage.scrollTop=alertMessage.scrollHeight
     ;
 
   });
 });
-
-      
 
   } else {
       console.log("usuario no existe");
