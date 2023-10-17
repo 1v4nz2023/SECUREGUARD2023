@@ -6,9 +6,9 @@ body{
 
 
 /* Header */
-.logo{
-width: 100px;
-
+.foto{
+width: 50px !important;    
+border-radius: 10px;
 }
 
 .contenedor_marquee{

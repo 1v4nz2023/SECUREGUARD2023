@@ -11,18 +11,33 @@ import { query } from '../../../src/index.js';
 import { where } from '../../../src/index.js';
 import { doc } from '../../../src/index.js';
 import { orderBy } from "../../../src/index.js";
+import { signOut } from "../../../src/index.js"; 
 
 const botones = document.querySelector('#botones');
 const nombreUsuario = document.querySelector('#nombreUsuario');
 const contenidoProtegido=document.querySelector('#contenidoProtegido');
 const formulario=document.querySelector('#formulario');
 const inputChat=document.querySelector('#inputChat');
+const title = document.querySelector('#title');
+const foto = document.querySelector('#foto');
+
+const f = new Intl.DateTimeFormat("es-sp",{
+  dateStyle:"short",
+  timeStyle:"short",
+})
 
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
         console.log(user);
         const uid = user.uid;
+        title.innerHTML=/*html*/`
+        ${user.displayName}
+        `
+        foto.innerHTML+=/*html*/`
+        <img src=" ${user.photoURL}" alt="foto" class="foto">
+  
+        `
         botones.innerHTML=/*html*/`
         <button class="btn btn-outline-danger" id="btnCerrarSesion">Cerrar sesión</button>
         `
@@ -97,13 +112,13 @@ const contenidoChat = (user) => {
         if(doc.data().uid === user.uid){
             contenidoProtegido.innerHTML +=/*html*/`
             <div class="d-flex justify-content-end me-4 mt-4">
-            <span class="badge text-bg-primary fs-5 ">${doc.data().nick}: ${doc.data().texto}</span>
+            <span class="badge text-bg-primary">${doc.data().nick}: ${doc.data().texto}</span>
             </div>
             `
         } else{
             contenidoProtegido.innerHTML +=/*html*/`
               <div class="d-flex justify-content-start me-4 mt-4">
-              <span class="badge text-bg-secondary fs-5 ">${doc.data().nick}: ${doc.data().texto}</span>
+              <span class="badge text-bg-secondary">${doc.data().nick}: ${doc.data().texto}</span>
             </div>
             `
         }
@@ -117,8 +132,27 @@ const contenidoChat = (user) => {
 const cerrarSesion=() => {
     const btnCerrarSesion=document.querySelector('#btnCerrarSesion');
     btnCerrarSesion.addEventListener('click', async() => {
-     auth.signOut();
+      setTimeout(function(){
+        signOut(auth).then(() => {
+            Swal.fire({
+                customClass: {
+                    confirmButton: 'confirm-button-class2',
+                    title: 'title-class',
+                    icon: 'icon-class'
+                  },   
+                text: 'Cerraste sesión',
+                icon: 'success',
+                confirmButtonText: 'OK',
+              })   
+      }).catch((error) => {
+        // An error happened.
+      });
+
+
+    }, 500);
     })
+
+    
     
     }
 
