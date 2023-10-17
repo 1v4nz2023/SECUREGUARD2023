@@ -5,9 +5,21 @@ import { provider } from "../../../src/index.js";
 import { signInWithPopup } from "../../../src/index.js";
 import { GoogleAuthProvider } from "../../../src/index.js";
 const btnCerrarSesion = document.getElementById('endSesion');
+const title = document.querySelector('#title');
+const foto = document.querySelector('#foto');
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
+      console.log(user);
+      console.log(user.photoURL);
+
+      title.innerHTML=/*html*/`
+      ${user.displayName}
+      `
+      foto.innerHTML+=/*html*/`
+      <img src=" ${user.photoURL}" alt="foto" class="foto">
+
+      `
 
         btnCerrarSesion.addEventListener('click',function() {
 

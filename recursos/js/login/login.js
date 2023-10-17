@@ -28,8 +28,8 @@ boton.addEventListener('click', () => {
         confirmButtonText: 'OK',
       })
       setTimeout(function(){
-              window.location="../../../modulos/panel/adminpanel/adminpanel.html";
-      }, 2000);
+              window.location="../../../modulos/alarma/alarma.html";
+      }, 600);
 
     }).catch((error) => {
       // Handle Errors here.
