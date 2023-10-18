@@ -2,8 +2,30 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+
+
+    background: #ba8b02; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #181818cc, #ba8c02d3),
+      url("../img/bg_login.png"); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1818189a, #ba8c0285),
+      url("../img/bg_login.png"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+
+footer{
+    background-color: #000000;
+
+}
+
+.fondo{
+    color:aliceblue;
+}
+.centro p{
+    color: white !important;
+}
 
 /* Header */
 .foto{

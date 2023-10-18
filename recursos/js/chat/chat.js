@@ -29,6 +29,15 @@ const f = new Intl.DateTimeFormat("es-sp",{
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
+
+      if(user.displayName !="Admin")
+        
+      {
+       $("#soli").css("display", "none");
+
+      }
+
+
         console.log(user);
         const uid = user.uid;
         title.innerHTML=/*html*/`
@@ -127,9 +136,9 @@ const contenidoChat = (user) => {
       });
     });
 
-};
+      };
 
-const cerrarSesion=() => {
+    const cerrarSesion=() => {
     const btnCerrarSesion=document.querySelector('#btnCerrarSesion');
     btnCerrarSesion.addEventListener('click', async() => {
       setTimeout(function(){

@@ -10,8 +10,7 @@ const foto = document.querySelector('#foto');
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-      console.log(user);
-      console.log(user.photoURL);
+
 
       title.innerHTML=/*html*/`
       ${user.displayName}
@@ -43,23 +42,17 @@ onAuthStateChanged(auth, (user) => {
             }, 500);
     
            })
+           if(user.displayName !="Admin")
+        
+           {
+            $("#soli").css("display", "none");
 
+           }
 
     } else {
-        Swal.fire({
-            customClass: {
-                confirmButton: 'confirm-button-class2',
-                title: 'title-class',
-                icon: 'icon-class'
-              },
-            title: 'Error',   
-            text: 'Por favor inicia sesión',
-            icon: 'error',
-            confirmButtonText: 'OK',
-          })
           setTimeout(function(){
             window.location="../../../index.html";
-        }, 2000);
+        }, 1000);
     }
 });
 

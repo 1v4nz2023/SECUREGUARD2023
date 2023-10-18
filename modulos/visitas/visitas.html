@@ -41,35 +41,93 @@
   </nav>
 </header>
   <main >
-    <br>
-    <div id="ejemplo"></div>
-    <div class="container datatables">
-        <table id="myTable" style="width:100%" class="display responsive no-wrap">
-            <thead>
-                <tr>
-                    <th>DNI</th>
-                    <th>NOMBRES</th>
-                    <th>APELLIDOS</th> 
-                    <th>TELEFONO</th>  
-                    <th>CORREO</th> 
-                    <th>CONTRASEÑA</th>      
-                    <th>ACCIÓN</th>             
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
+
+
+
+    <div class="section__login container">
+
+    <h2>PROGRAMAR VISITA</h2>
+    <form class="login__formulario">
+        <div class="mb-3">
+          <label for="nombres" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="nombres" aria-describedby="emailHelp" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="apellidos" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="apellidos" required>
+        </div>
+        <div class="mb-3">
+            <label for="dni" class="form-label">DNI</label>
+            <input type="number" class="form-control" id="dni" required>
+          </div>
+
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="number" class="form-control" id="telefono">
+          </div>
+
+          <div class="mb-3">
+            <label for="date" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="date">
+
+          </div>
+
+            <div class="mb-3">
+                <label for="time" class="form-label">Hora</label>
+                <input type="time" class="form-control" id="time">
+            </div>
+            <div class="mb-3">
+                <label for="motivo" class="form-label">Motivo</label>
+                <input type="text" class="form-control input-lg" id="motivo">
+            </div>       
+            <br> 
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+
+
+</div>
+
+<div class="section__login container">
+
+    <h2>PROGRAMAR DELIVERY</h2>
+    <form class="login__formulario">
+        <div class="mb-3">
+          <label for="nombres2" class="form-label">Empresa</label>
+          <input type="text" class="form-control" id="nombres2" aria-describedby="emailHelp" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="apellidos2" class="form-label">Tipo de Vehiculo</label>
+          <input type="text" class="form-control" id="apellidos2" required>
+        </div>
+        <div class="mb-3">
+            <label for="contacto" class="form-label">Contacto</label>
+            <input type="text" class="form-control" id="contacto" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="date2" class="form-label">Fecha</label>
+            <input type="date2" class="form-control" id="date2">
+
+          </div>
+
+            <div class="mb-3">
+                <label for="time2" class="form-label">Hora</label>
+                <input type="time2" class="form-control" id="time2">
+            </div>
+<br>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+
+
+</div>
+
 
 
   </main>
   <footer class="text-body-secondary py-5 footer" >
-    <div class="container">
-      <p class="float-end mb-1">
-        <a href="#" class="fondo">Al inicio</a>
-      </p>
       <p class="mb-1 fondo">Desarrollado por Grupo 3 © 2023</p>
-    </div>
   </footer>
 <!-- The core Firebase JS SDK is always required and must be listed first 
 <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>-->

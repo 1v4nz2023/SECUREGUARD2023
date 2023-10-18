@@ -15,49 +15,22 @@ import { getDatabase } from "../../../src/index.js";
 import { ref } from "../../../src/index.js";
 import { child } from "../../../src/index.js";
 import { get } from "../../../src/index.js";
+import { set } from "../../../src/index.js";
 import { onValue } from "../../../src/index.js";
 import { db } from "../../../src/index.js";
 import { database } from "../../../src/index.js"; 
 import { update } from "../../../src/index.js"; 
-// import { db } from "../../../src/index.js";
-// $(document).ready( function () {
-//     let tabla = $('#myTable').DataTable(
-// {
-//     responsive: true,
-//     searching: true,
-//     oLanguage: {
-//         sInfo: "Mostrando _START_ de _END_ de _TOTAL_ entradas", // text you want show for info section
-//         sSearch: "Buscar ",
-//         sLengthMenu: "Mostrando _MENU_ entradas",
-//         sInfoFiltered: " - filtrando de  _MAX_ registros",
-//         sZeroRecords: "No hay registros que mostrar",
-//         sInfoEmpty: "Mostrando _START_ de _END_ de _TOTAL_ entradas",
-//         oPaginate: {
-//           sNext: "Siguiente",
-//           sPrevious: "Atras",
-//         },
-//       },
+import { getAuth } from "../../../src/index.js"; 
+import { createUserWithEmailAndPassword } from "../../../src/index.js"; 
+import { updateProfile } from "../../../src/index.js"; 
+import { remove } from "../../../src/index.js";
 
-// }
-//     );
-// } );
+const btnCerrarSesion = document.getElementById('endSesion');
+const title = document.querySelector('#title');
+const foto = document.querySelector('#foto');
 let array_usuarios_temp = [];
 let tabla_usuarios;
-// const dbRef = ref(getDatabase());
 
-// const q = query(collection(db, "userquest"), orderBy("fecha"));
-// const unsubscribe = onSnapshot(q, (querySnapshot) => {
-//   querySnapshot.forEach((doc) => {
-//     let item = {
-//       dni: doc.data().dni,
-//       nombres: doc.data().nombres,
-//       apellidos: doc.data().apellidos,
-//       telefono: doc.data().telefono,
-//       email: doc.data().email,
-//       estado: doc.data().estado,
-//     };
-//     array_usuarios_temp.push(item);
-//   });
 
 const dbRef = ref(getDatabase());
 get(child(dbRef, 'users/')).then((snapshot) => {
@@ -70,12 +43,12 @@ get(child(dbRef, 'users/')).then((snapshot) => {
       telefono: childSnapshot.val().telefono,
       email: childSnapshot.val().email,
       estado: childSnapshot.val().estado,
+      password: childSnapshot.val().password,
     };
     array_usuarios_temp.push(item);
 
 
 
-      console.log(item)          // "example@gmail.com"
    })
   } else {
     console.log("No data available");
@@ -102,9 +75,9 @@ get(child(dbRef, 'users/')).then((snapshot) => {
       { data: "apellidos" },
       { data: "telefono" },
       { data: "email" },
-      { data: "estado" },
+      { data: "password" },
       {
-        defaultContent: "<div><button class='btn_update_user btn btn-success'>Activar</button>  <button class='btn_update_user2 btn btn-danger'>Desactivar</button></div>",
+        defaultContent: "<div><button class='btn_update_user btn btn-success'>Aprobar</button>  <button class='btn_update_user2 btn btn-danger'>Rechazar</button></div>",
         
       },
     ],
@@ -113,10 +86,17 @@ get(child(dbRef, 'users/')).then((snapshot) => {
 
   $("#myTable tbody").on("click", ".btn_update_user", function (e) {
     let infousuarios = tabla_usuarios.row($(this).parents("tr,li")).data();
-    update(ref(database, 'users/' + infousuarios.dni), {
-      estado:'activado'
+    let email = infousuarios.email;
+    let password= infousuarios.password;
+    const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    const auth = getAuth();
+    updateProfile(auth.currentUser, {
+      displayName: infousuarios.nombres, photoURL: "https://cdn-icons-png.flaticon.com/512/149/149071.png"
     });
-
     Swal.fire({
       customClass: {
           confirmButton: 'confirm-button-class2',
@@ -127,40 +107,34 @@ get(child(dbRef, 'users/')).then((snapshot) => {
       text: 'Usuario activado',
       icon: 'success',
       confirmButtonText: 'OK',
-    })
-    setTimeout(function(){
-      location.reload();
+    })  
 
-    }, 1000);
+    signOut(auth);
+    
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+
+
     
   });
 
   $("#myTable tbody").on("click", ".btn_update_user2", function (e) {
-    
     let infousuarios = tabla_usuarios.row($(this).parents("tr,li")).data();
-    update(ref(database, 'users/' + infousuarios.dni), {
-      estado:'desactivado'
-    });
 
-    Swal.fire({
-      customClass: {
-          confirmButton: 'confirm-button-class2',
-          title: 'title-class',
-          icon: 'icon-class'
-        },   
-      title: 'Datos actualizados',
-      text: 'Usuario desactivado',
-      icon: 'success',
-      confirmButtonText: 'OK',
-    })
-    setTimeout(function(){
-      location.reload();
+    tabla_usuarios
+    .row( $(this).parents('tr') )
+    .remove()
+    .draw()
 
-    }, 1000);
-    
+    const db = getDatabase();
+    const dbRef = ref(db, "users/" + infousuarios.dni);
+    remove(dbRef).then(() => console.log("Deleted"))
+
   });
-
-
 
 
 

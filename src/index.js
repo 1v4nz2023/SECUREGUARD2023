@@ -1,7 +1,7 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js';
-import{getAuth, onAuthStateChanged,GoogleAuthProvider,signInWithPopup,signOut } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
-import{getFirestore, collection, addDoc, onSnapshot, where, query, doc,orderBy,setDoc  } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js';
-import {getDatabase,ref, set,onValue,child, get,update  } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"
+import{getAuth, onAuthStateChanged,GoogleAuthProvider,signInWithPopup,signOut,createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
+import{getFirestore, collection, addDoc, onSnapshot, where, query, doc,orderBy,setDoc,updateDoc   } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js';
+import {getDatabase,ref, set,onValue,child, get,update,remove   } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"
 
 const firebaseConfig = {
   apiKey: "AIzaSyD68kzIw8vC4hy2iqR6NRrPw6qHN9Xhb0o",
@@ -27,6 +27,7 @@ export{signInWithPopup};
 export{collection};
 export{addDoc};
 export{onSnapshot};
+export{updateDoc};
 export{query};
 export{where};
 export{doc};
@@ -41,6 +42,11 @@ export{child};
 export{get};
 export{setDoc};
 export{update};
+export{createUserWithEmailAndPassword};
+export{signInWithEmailAndPassword};
+export{getAuth};
+export{updateProfile};
+export{remove}
 export{auth};
 export{provider};
 export{db};

@@ -36,37 +36,7 @@ const estado = 'desactivado';
     modal.hide();
 
     writeUserData(nombres, apellidos, dni, email, password, telefono, estado);
-
-    // try {
-
-    //   const docRef = await addDoc(collection(db, "userquest"), {
-    //     nombres: nombres,
-    //     apellidos: apellidos,
-    //     dni:dni,
-    //     email:email,
-    //     password:password,        
-    //     telefono:telefono,
-    //     estado:estado,
-    //     fecha: Date.now()
-    //   });
-
-
-    //   console.log("Mensaje guardado ");
-    //   Swal.fire({
-    //     customClass: {
-    //         confirmButton: 'confirm-button-class2',
-    //         title: 'title-class',
-    //         icon: 'icon-class'
-    //       },   
-    //     title: 'Registro exitoso ',
-    //     text: 'Espere a que sea aprobado',
-    //     icon: 'success',
-    //     confirmButtonText: 'OK',
-    //   })
-      
-    // } catch (e) {
-    //   console.error("Error adding document: ", e);
-    // }
+    signupForm.reset();
 });
 
 function writeUserData(nombres, apellidos, dni, email, password, telefono, estado) {

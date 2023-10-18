@@ -16,6 +16,7 @@ boton.addEventListener('click', () => {
       const user = result.user;
       // IdP data available using getAdditionalUserInfo(result)
       // ...
+      console.log(user.displayName);
       Swal.fire({
         customClass: {
             confirmButton: 'confirm-button-class2',
@@ -28,7 +29,8 @@ boton.addEventListener('click', () => {
         confirmButtonText: 'OK',
       })
       setTimeout(function(){
-              window.location="../../../modulos/alarma/alarma.html";
+        window.location="../../../modulos/alarma/alarma.html";
+              
       }, 600);
 
     }).catch((error) => {
