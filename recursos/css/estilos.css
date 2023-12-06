@@ -12,6 +12,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    
 }
 
 
@@ -28,10 +29,13 @@ footer{
 }
 
 /* Header */
-.foto{
-width: 50px !important;    
-border-radius: 10px;
+.estilo-imagen {
+  width: 100px;
+  border-radius: 100%;
+  /* Agrega más estilos según sea necesario */
 }
+
+
 
 .contenedor_marquee{
     color: white;
@@ -39,7 +43,10 @@ border-radius: 10px;
 }
 
 
+
 /* Main */
+
+
 
 .contenedor_panico{
 
@@ -68,4 +75,8 @@ border-radius: 10px;
 font-size: xx-large;
 }
 
+
+.chat{
+    padding-bottom: 2rem;
+}
 

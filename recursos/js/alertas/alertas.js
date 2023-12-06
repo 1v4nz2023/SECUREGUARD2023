@@ -20,9 +20,6 @@ import { db } from "../../../src/index.js";
 const title = document.querySelector('#title');
 
 
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-
 
 const q = query(collection(db, "alertas"),orderBy('fecha'));
 const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -50,26 +47,7 @@ const unsubscribe = onSnapshot(q, (querySnapshot) => {
     ;
 
   });
-});
 
-  } else {
-      console.log("usuario no existe");
-            Swal.fire({
-        customClass: {
-            confirmButton: 'confirm-button-class2',
-            title: 'title-class',
-            icon: 'icon-class'
-          },
-        title: 'Error',   
-        text: 'Por favor inicia sesión',
-        icon: 'error',
-        confirmButtonText: 'O K',
-      })
-      setTimeout(function(){
-        window.location.href = "../../index.html";
-      }, 2000);
-
-  }
 });
 
 

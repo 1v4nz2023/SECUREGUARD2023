@@ -23,6 +23,11 @@ main{
   background-color: aliceblue;
 }
 
+
+#myTable1{
+  background-color: aliceblue;
+}
+
 .datatables{
   height: 80vh;
 }
