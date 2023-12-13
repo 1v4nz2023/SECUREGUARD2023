@@ -4,7 +4,7 @@ $(document).ready( function () {
 
    $.ajax({
     type: 'GET',
-    url: 'http://localhost:3000/api/ver/visitas', // Reemplaza con la URL correcta de tu servidor
+    url: 'https://secureguard2023.onrender.com/api/ver/visitas', // Reemplaza con la URL correcta de tu servidor
     dataType: 'json',
     success: function(data) {
       console.log(data);

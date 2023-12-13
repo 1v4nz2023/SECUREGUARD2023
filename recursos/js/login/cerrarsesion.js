@@ -16,7 +16,7 @@ $("#endSesion").click(function(e){
 
     $.ajax({
         type: "post",
-        url: "http://localhost:3000/api/logout",
+        url: "https://secureguard2023.onrender.com/api/logout",
         //processData:false,
         //contentType:false,
 

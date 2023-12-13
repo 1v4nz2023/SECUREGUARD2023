@@ -28,7 +28,7 @@ let array_visitas = {
 $.ajax({
 
     type: "post",
-    url: "http://localhost:3000/api/visitas",
+    url: "https://secureguard2023.onrender.com/api/visitas",
     data: array_visitas,
     dataType: "json",
     success: function(response) {

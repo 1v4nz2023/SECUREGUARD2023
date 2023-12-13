@@ -38,7 +38,7 @@ $("#savephoto").click(function(e){
     $.ajax({
 
         type: "put",
-        url: "http://localhost:3000/api/login/"+user,
+        url: "https://secureguard2023.onrender.com/api/login/"+user,
         data: array_update,
         dataType: "json",
         success: function(response){
@@ -68,7 +68,7 @@ $("#deletephoto").click(function(e){
   $.ajax({
 
       type: "put",
-      url: "http://localhost:3000/api/login/"+user,
+      url: "https://secureguard2023.onrender.com/api/login/"+user,
       data: array_update,
       dataType: "json",
       success: function(response){

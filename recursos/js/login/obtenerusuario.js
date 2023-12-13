@@ -6,7 +6,7 @@ const fotoperfil = localStorage.getItem('fotoperfil');
 
 $.ajax({
     type: 'GET',
-    url: `http://localhost:3000/api/users/${usuario_session}`,
+    url: `https://secureguard2023.onrender.com/api/users/${usuario_session}`,
     dataType: 'json',
     success: function(response) {
 

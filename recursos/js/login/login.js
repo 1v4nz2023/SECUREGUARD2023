@@ -33,7 +33,7 @@ boton.addEventListener('click', () => {
 
       $.ajax({
         type: "get",
-        url: "http://localhost:3000/api/users/"+user.displayName,
+        url: "https://secureguard2023.onrender.com/api/users/"+user.displayName,
         success: function (response) {
             console.log(response);
             
@@ -87,7 +87,7 @@ boton.addEventListener('click', () => {
 
           $.ajax({
             type: "post",
-            url: "http://localhost:3000/api/registro",
+            url: "https://secureguard2023.onrender.com/api/registro",
             data: array_usuario,
             dataType: "json",
             success: function (response) {

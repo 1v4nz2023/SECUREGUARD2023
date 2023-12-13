@@ -24,7 +24,7 @@ $("#sendelivery").click(function(e) {
    $.ajax({
    
        type: "post",
-       url: "http://localhost:3000/api/delivery",
+       url: "https://secureguard2023.onrender.com/api/delivery",
        data: array_delivery,
        dataType: "json",
        success: function(response) {
