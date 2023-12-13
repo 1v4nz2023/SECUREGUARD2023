@@ -1,7 +1,10 @@
 const express = require('express');
+const session = require('express-session');
+
 const mongoose = require('mongoose');
 require('dotenv').config();
 const path = require('path');
+
 //SWAGGER
 
 const swaggerUI = require('swagger-ui-express');
@@ -44,12 +47,22 @@ const port = process.env.PORT;
 
 app.use(express.json());
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJsDoc(swaggerSpec)));
+const secretKey = '0ca876e4fcec0f5689591903a9b41336';
+
+app.use(session({
+  secret: secretKey,
+  resave: false,
+  saveUninitialized: true
+}));
+
+
 
 app.use('/api', auth_Service);
 app.use('/api', tokenvalidate_service);
 app.use('/api', userconfig_service);
 app.use('/api', endsession_service);
 app.use('/api', regvisitas_service);
+
 
 
 
