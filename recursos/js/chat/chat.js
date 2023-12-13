@@ -143,7 +143,7 @@ const contenidoChat = (user) => {
             if(doc.data().nick === usuario){
                 contenidoProtegido.innerHTML +=/*html*/`
                 <div class="message">
-                <div class="sender">${doc.data().nick}</div>
+                <div class="sender d-flex justify-content-end">${doc.data().nick}</div>
                 <div class="message-text d-flex justify-content-end">${doc.data().texto}</div>
                 <div class="timestamp d-flex justify-content-end">${doc.data().date}</div>
                 </div>
