@@ -26,7 +26,7 @@ $("#btn_inicio_sesion").click(function (e) {
     } else {
         $.ajax({
             type: "post",
-            url: "http://localhost:3000/api/login",
+            url: "https://secureguard2023.onrender.com/api/login",
             data: array_login,
             dataType: "json",
           
