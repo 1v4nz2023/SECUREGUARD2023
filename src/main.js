@@ -39,7 +39,7 @@ const endsession_service = require('./service/endsession_service');
 const regvisitas_service = require('./service/regvisitas_service');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 
 app.use(express.json());
