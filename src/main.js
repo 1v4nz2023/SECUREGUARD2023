@@ -30,11 +30,6 @@ const swaggerSpec = {
 }
 
 
-
-
-
-
-
 const auth_Service = require('./service/auth_service');
 const tokenvalidate_service = require('./service/tokenvalidate_service');
 const userconfig_service = require('./service/userconfig_service');
@@ -70,7 +65,6 @@ app.use('/api', regvisitas_service);
 app.get('/', (req, res) => {
     res.send('Servicio iniciado');
 })
-
 mongoose
 .connect(process.env.url_DataBase)
 .then(() => console.log('Conectado a la base de datos'))

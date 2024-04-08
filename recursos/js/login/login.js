@@ -29,11 +29,11 @@ boton.addEventListener('click', () => {
         "rol":"usuario"
 
      }
-
+      console.log(user.displayName);
 
       $.ajax({
         type: "get",
-        url: "https://secureguard2023.onrender.com/api/users/"+user.displayName,
+        url: "http://localhost:3000/api/users/"+user.displayName,
         success: function (response) {
             console.log(response);
             
@@ -87,7 +87,7 @@ boton.addEventListener('click', () => {
 
           $.ajax({
             type: "post",
-            url: "https://secureguard2023.onrender.com/api/registro",
+            url: "http://localhost:3000/api/registro",
             data: array_usuario,
             dataType: "json",
             success: function (response) {

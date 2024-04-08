@@ -27,7 +27,7 @@ $("#reg-btn").click(function (e) {
 
     $.ajax({
         type: "post",
-        url: "https://secureguard2023.onrender.com/api/registro",
+        url: "http://localhost:3000/api/registro",
         data: array_usuario,
         dataType: "json",
         //processData:false,
